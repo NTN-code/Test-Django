@@ -2,36 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>index</title>
-{#    <link rel="stylesheet" href="booklistview.css">#}
-    <style>
-        h1{
-    text-align: center;
-    font-style: italic;
-    font-family: Bahnschrift;
-    }
-    .book{
-        text-align: center;
-        width: 500px;
-    }
-    main{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+    <link rel="stylesheet" href="D:\python\clone_git\Test-Django\BelBook\index\templates\index\booklistview.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Чтение книг онлайн">
+    <meta name="author" content="Anton Tkachev">
+    <meta http-equiv="content-language" content="ru">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    }
-    </style>
+    <!--    <style>-->
+<!--        h1{-->
+<!--    text-align: center;-->
+<!--    font-style: italic;-->
+<!--    font-family: Bahnschrift;-->
+<!--    }-->
+<!--    .book{-->
+<!--        text-align: center;-->
+<!--        width: 500px;-->
+<!--    }-->
+<!--    main{-->
+<!--        display: flex;-->
+<!--        flex-direction: row;-->
+<!--        width: 100%;-->
+
+<!--    }-->
+<!--    </style>-->
 </head>
 <body>
     <h1>BelBook</h1>
     <header>
-        <h1></h1>
+        <h1>    </h1>
     </header>
     <main>
     {% if books_list %}
         {% for book in books_list %}
             <div class="book">
-                <a href="books/7">
+                <a href="books/{{ book.id }}">
                     <img src="{{ book.url_picture }}">
                     <h1>Книга:{{ book.title }}</h1>
                     <p>Дата последнего обнавления:{{ book.data_update }}</p>

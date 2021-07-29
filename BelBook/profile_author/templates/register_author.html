@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регестрация автора</title>
+</head>
+<body>
+    <h2>Регестрация</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ author_form.as_ul }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

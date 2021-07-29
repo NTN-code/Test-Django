@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.title }}</title>
+</head>
+<body>
+    <img src="{{ object.url_picture }}">
+    <h1>Книга:{{ object.title }}</h1>
+    <p>Дата последнего обнавления:{{ object.data_update }}</p>
+    <p>Количество просмотров:{{ object.counter_views }}</p>
+    <p>Количество читателей:{{ object.readers }}</p>
+    <p>{{ object.book_status }}</p>
+</body>
+</html>

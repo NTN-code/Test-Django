@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'index',
+    'profile_author',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'BelBook.middleware.allowed_IP.AllowedIPMiddleware',
+    # 'BelBook.middleware.time_exception_ip.TimeExceptionIPMiddleware',
+    'BelBook.middleware.request_delay.RequestDelayMiddleware',
+    'BelBook.middleware.save_username.SaveUsernameMiddleware',
 ]
 
 ROOT_URLCONF = 'BelBook.urls'

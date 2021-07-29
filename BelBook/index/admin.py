@@ -7,6 +7,7 @@ from .models import Book, BookStatus
 class BookAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(BookStatus)
 class BookStatusAdmin(admin.ModelAdmin):
     pass

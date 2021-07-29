@@ -11,3 +11,21 @@ class BookListView(generic.ListView):
     queryset = Book.objects.all()[:6]
 
 
+class BookDetailListView(generic.DetailView):
+    model = Book
+    template_name = 'index/bookdetaillistview.html'
+
+
+
+class BookDetailListView(generic.DetailView):
+    model = Book
+    template_name = 'index/bookdetaillistview.html'
+
+
+
+class BookDetailListView(generic.DetailView):
+    model = Book
+    template_name = 'index/bookdetaillistview.html'
+
+
+
