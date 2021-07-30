@@ -5,6 +5,12 @@ from django.db import models
 
 
 class Authors(models.Model):
+    STYLE_TYPE = [
+        ('anc Greek', 'Ancient Greek Literatura'),
+        ('anc Roma', 'Ancient Roma Literatura'),
+        ('anc Belarus', 'Ancient Belarus Literatura'),
+    ]
+
     name = models.CharField(max_length=30, verbose_name='Имя', null=False, blank=False)
     surname = models.CharField(max_length=30, verbose_name='Фамилия', null=False, blank=False)
     genre = models.TextField(verbose_name='Жанр', null=True, blank=True)
@@ -12,6 +18,10 @@ class Authors(models.Model):
     description = models.TextField(verbose_name='Описание', null=True, blank=True)
     email = models.EmailField(verbose_name='Email')
     birthday = models.DateTimeField(db_index=True, verbose_name='Дата рождения')
+    style = models.CharField(max_length=20, choices=STYLE_TYPE, default='anc Belarus', null=False, blank=False,
+                             verbose_name='Стиль литературы')
+
+
     class Meta:
         db_table = 'Authors'
         verbose_name_plural = "Авторы"

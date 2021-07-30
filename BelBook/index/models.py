@@ -12,6 +12,7 @@ class Book(models.Model):
     counter_views = models.IntegerField(default=0, null=False, blank=False, verbose_name='Количество просмотров')
     readers = models.IntegerField(default=0, null=False, blank=False, verbose_name='Количество читателей')
     book_status = models.ForeignKey('BookStatus', default=None, null=True, on_delete=models.CASCADE, related_name='FK_Book_book_status', verbose_name='Статус книги')
+    is_exist = models.BooleanField(default=False, null=False, blank=False, verbose_name='В наличии')
 
     def __str__(self):
         return self.title
