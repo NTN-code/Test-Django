@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'index',
     'profile_author',
     'client',
+    'upmedia',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/main/'
 
 SESSION_COOKIE_AGE = 30 * 24 * 60 * 60
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'upmedia/')
+
+MEDIA_URL = 'upmedia/'

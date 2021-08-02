@@ -8,10 +8,12 @@
     {% if request.user.is_authenticated %}
         <h1>Добро пожаловать! {{ request.user.username }}</h1>
         <h1>Добро пожаловать! {{ request.user }}</h1>
+{#        <h1>День рождения {{ request.user.profile.date_of_birthday }}</h1>#}
+{#        <h1>Город {{ request.user.profile.city }}</h1>#}
     {% else %}
         <h1>Добро пожаловать! {{ request.user.username }}</h1>
         <h1>Вы не авторизованны на нашем сайте!</h1>
-        <a href="{% url 'another_login' %}">Log in</a>
+{#        <a href="{% url 'another_login' %}">Log in</a>#}
     {% endif %}
 </body>
 </html>
